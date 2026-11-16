@@ -1,0 +1,18 @@
+name: "每月還款倒數"
+description: "在 Egern 小工具中顯示每月還款日與剩餘天數；資料只保存在本機，不連線、不上報。"
+icon: "creditcard.fill"
+
+env_schema:
+  REPAYMENT_CARDS:
+    name: "還款項目"
+    description: "只保存在 Egern 本機。格式：名稱:每月日期；多項以分號分隔，例如 信用卡 A:10;信用卡 B:25"
+    default_value: "信用卡 A:10;信用卡 B:25"
+
+scriptings:
+  - generic:
+      name: "repayment-reminder"
+      script_url: "https://raw.githubusercontent.com/dotcom-lfy/egern-repayment-reminder/main/repayment.js"
+      timeout: 10
+
+widgets:
+  - name: "repayment-reminder"
